@@ -50,7 +50,7 @@ def sendNZB(nzb):
         if sickbeard.NZBGET_USERNAME or sickbeard.NZBGET_PASSWORD:
             netloc = urllib.quote_plus(sickbeard.NZBGET_USERNAME.encode("utf-8", 'ignore')) + u":" + urllib.quote_plus(sickbeard.NZBGET_PASSWORD.encode("utf-8", 'ignore')) + u"@" + netloc
 
-        url = urlparse.urlunsplit((scheme, netloc, u"/xmlrpc", "", ""))
+        url = urlparse.urlunsplit((scheme, netloc, u"/nzbget/xmlrpc", "", ""))
 
         logger.log(u"Sending NZB to NZBGet: %s" % nzb.name)
         logger.log(u"NZBGet URL: " + url, logger.DEBUG)
